@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.dao.IUserDao">
+	
+	<!-- ++++++++++++++++++新增++++++++++++++++++++++ -->
+	<!-- addUser 新增 insert -->
+	<insert id="addUser" parameterType="java.util.Map">
+	<!-- SQL语句 -->
+	insert into user_p (user_id,userName,phoneNo,sex) values 
+	 (#{user_id},#{userName},#{phoneNo},#{sex}) 
+	</insert>
+	<!-- ++++++++++++++++++新增++++++++++++++++++++++ -->
+	<!-- addUser 新增 insert -->
+	<insert id="addRole" parameterType="java.util.Map">
+	<!-- SQL语句 -->
+	insert into role (role_id,roleName) values 
+	 (#{role_id},#{roleName}) 
+	</insert>
+	<!-- ++++++++++++++++++新增++++++++++++++++++++++ -->
+	<!-- addUser 新增 insert -->
+	<insert id="addBm" parameterType="java.util.Map">
+	<!-- SQL语句 -->
+	insert into bumen (bm_id,bmName,manager) values 
+	 (#{bm_id},#{bmName},#{manager}) 
+	</insert>
+	<!-- ++++++++++++++++++新增++++++++++++++++++++++ -->
+	<!-- addUser 新增 insert -->
+	<insert id="saveVisitR" parameterType="java.util.Map">
+	<!-- SQL语句 -->
+	insert into visit (visit_id,visitCustomer_id,visitTime,visitPattern,visitPay,visitMoney,visitInfo,visitUserPhone) values 
+	 (#{visit_id},#{visitCustomer_id},#{visitTime},#{visitPattern},#{visitPay},#{visitMoney},#{visitInfo},#{visitUserPhone}) 
+	</insert>
+	<!-- ++++++++++++++++++新增++++++++++++++++++++++ -->
+	<!-- addUser 新增 insert -->
+	<insert id="saveAnno" parameterType="java.util.Map">
+	<!-- SQL语句 -->
+	insert into annotation (annotation_id,annotationVisit_id,annotationUserPhone,annotationTime,annotationInfo) values 
+	 (#{annotation_id},#{annotationVisit_id},#{annotationUserPhone},now(),#{annotationInfo}) 
+	</insert>
+	<!-- ++++++++++++++++++新增++++++++++++++++++++++ -->
+	<!-- addUser 新增 insert -->
+	<insert id="addCus" parameterType="java.util.Map">
+	<!-- SQL语句 -->
+	 insert into customer (customer_id,customerName,contactName,customerTel,customerEmail,customerAddr,customerPublic,customerGrade,createTime,userPhone) values 
+	 (#{customer_id},#{customerName},#{contactName},#{customerTel},#{customerEmail},#{customerAddr},#{CustomerPublic},#{customerGrade},now(),#{userPhone}) 
+	</insert>
+	
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="updateUser" parameterType="java.util.Map">
+	 update user_p set userName=#{userName},phoneNo=#{phoneNo},sex=#{sex}
+	 where user_id=#{user_id}
+	</update>
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="updateRole" parameterType="java.util.Map">
+	 update role set roleName=#{roleName}
+	 where role_id=#{role_id}
+	</update>
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="updateBm" parameterType="java.util.Map">
+	 update bumen set bmName=#{bmName} , manager=#{manager}
+	 where bm_id=#{bm_id}
+	</update>
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="updateCus" parameterType="java.util.Map">
+	 update customer set customerName=#{customerName} , contactName=#{contactName},customerTel=#{customerTel},
+	 customerEmail=#{customerEmail},customerAddr=#{customerAddr},state=#{state},
+	 customerGrade=#{customerGrade},userPhone=#{userPhone}
+	 where customer_id=#{customer_id}
+	</update>
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="updateDoc" parameterType="java.util.Map">
+	 update customer set customerPublic='private', userPhone=#{business}
+	 where customer_id=#{customer_id}
+	</update>
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="updateAba" parameterType="java.util.Map">
+	 update customer set customerPublic='public', userPhone = null
+	 where customer_id=#{customer_id}
+	</update>
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="updateU" parameterType="java.util.Map">
+	 update customer set customerPublic='private', userPhone = #{userPhone}
+	 where customer_id=#{customer_id}
+	</update>
+	<!-- +++++++++++++++++++修改+++++++++++++++++++  -->
+
+	<update id="upVisitR" parameterType="java.util.Map">
+	 update visit set visitTime=#{visitTime},visitInfo=#{visitInfo},visitPattern=#{visitPattern},visitPay=#{visitPay},visitMoney=#{visitMoney} 
+	 where visit_id=#{visit_id}
+	</update>
+	
+	<update id="annoUp" parameterType="java.util.Map">
+	 update annotation set annotationInfo=#{annotationInfo} where annotation_id=#{annotation_id}
+	</update>
+	
+	
+	<!-- ++++++++++++++++++删除+++++++++++++++++++++ -->
+	<delete id="deleteUser" parameterType="com.st.bean.User" >
+	delete from user_p where user_id=#{user_id}
+	</delete>
+	<!-- ++++++++++++++++++删除+++++++++++++++++++++ -->
+	<delete id="deleteRole" parameterType="com.st.bean.Role" >
+	delete from role where role_id=#{role_id}
+	</delete>
+	<delete id="deletePerm" parameterType="com.st.bean.Role" >
+	delete from role_permission where role_id=#{role_id}
+	</delete>
+	<delete id="deleteURole" parameterType="com.st.bean.Role" >
+	delete from user_role where role_id=#{role_id}
+	</delete>
+	<!-- ++++++++++++++++++删除+++++++++++++++++++++ -->
+	<delete id="deleteBm" parameterType="java.util.Map" >
+	delete from bumen where bm_id=#{bm_id}
+	</delete>
+	<!-- ++++++++++++++++++删除+++++++++++++++++++++ -->
+	<delete id="deleteCus" parameterType="com.st.bean.BuMen" >
+	delete from customer where customer_id=#{customer_id}
+	</delete>
+	<!-- ++++++++++++++++++删除+++++++++++++++++++++ -->
+	<delete id="deleteVis" parameterType="com.st.bean.VisitR" >
+	delete from visit where visit_id=#{visit_id}
+	</delete>
+	<!-- ++++++++++++++++++删除+++++++++++++++++++++ -->
+	<delete id="delAnno" parameterType="com.st.bean.AnnoRe" >
+	delete from annotation where annotation_id=#{annotation_id}
+	</delete>
+	
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="selU" parameterType="java.util.Map" resultType="int">
+		select count(*) from user_p where bmName = #{bmName}
+	</select>
+	
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="user_list" parameterType="java.util.Map" resultType="com.st.bean.User">
+		select * from user_p where phoneNo like '%${checktext}%' 
+		or userName like '%${checktext}%' 
+		or sex like '%${checktext}%'
+	    limit ${start},${limit}
+	</select>
+	
+	<!-- 查询出所有的商品类型  -->
+	<select id="selectUser" parameterType="java.util.Map" resultType="com.st.bean.User">
+	select * from user_p
+	</select> 
+	
+	<select id="getCount" parameterType="java.util.Map" resultType="int">
+	select count(*) from user_p where phoneNo like '%${checktext}%' 
+		or userName like '%${checktext}%' 
+		or sex like '%${checktext}%'
+	</select>
+	
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="dapa_list" parameterType="java.util.Map" resultType="com.st.bean.BuMen">
+		select * from bumen where bmName like '%${checktext}%' 
+		or manager like '%${checktext}%' 
+	    limit ${start},${limit}
+	</select>
+	
+	<select id="getCountDa" parameterType="java.util.Map" resultType="int">
+	select count(*) from bumen where bmName like '%${bmName}%' or manager like '%${manager}%' 
+	</select>
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="cusT_list" parameterType="java.util.Map" resultType="com.st.bean.Customer">
+		select * from customer where customerName like '%${checktext}%' 
+		or contactName like '%${checktext}%' 
+		or customerTel like '%${checktext}%' 
+		or customerEmail like '%${checktext}%' 
+		or customerAddr like '%${checktext}%' 
+		or state like '%${checktext}%' 
+		or customerGrade like '%${checktext}%' 
+		or userPhone like '%${checktext}%' 
+		or customerPublic like '%${checktext}%'
+	    limit ${start},${limit}
+	</select>
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="pubCus_list" parameterType="java.util.Map" resultType="com.st.bean.Customer">
+		select * from customer where customerPublic='public' and (customerName like '%${checktext}%' 
+		or contactName like '%${checktext}%' 
+		or customerTel like '%${checktext}%' 
+		or customerEmail like '%${checktext}%' 
+		or customerAddr like '%${checktext}%' 
+		or state like '%${checktext}%' 
+		or customerGrade like '%${checktext}%' 
+		or userPhone like '%${checktext}%')
+	    limit ${start},${limit}
+	</select>
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="priCus_list" parameterType="java.util.Map" resultType="com.st.bean.Customer">
+		select * from customer where customerPublic='private' and (customerName like '%${checktext}%' 
+		or contactName like '%${checktext}%' 
+		or customerTel like '%${checktext}%' 
+		or customerEmail like '%${checktext}%' 
+		or customerAddr like '%${checktext}%' 
+		or state like '%${checktext}%' 
+		or customerGrade like '%${checktext}%' 
+		or userPhone like '%${checktext}%')
+	    limit ${start},${limit}
+	</select>
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="returnRe" parameterType="java.util.Map" resultType="com.st.bean.VisitR">
+		select * from visit where visitUserPhone like '%${checktext}%' 
+		or visitTime like '%${checktext}%' 
+		or visitInfo like '%${checktext}%' 
+		or visitPattern like '%${checktext}%' 
+		or visitPay like '%${checktext}%' 
+		or visitMoney like '%${checktext}%' 
+	    limit ${start},${limit}
+	</select>
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="returnReP" parameterType="java.util.Map" resultType="com.st.bean.VisitR">
+		select * from visit where visitUserPhone=#{visitUserPhone} and (visitUserPhone like '%${checktext}%' 
+		or visitTime like '%${checktext}%' 
+		or visitInfo like '%${checktext}%' 
+		or visitPattern like '%${checktext}%' 
+		or visitPay like '%${checktext}%' 
+		or visitMoney like '%${checktext}%')
+	    limit ${start},${limit}
+	</select>
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="annoRe" parameterType="java.util.Map" resultType="com.st.bean.AnnoRe">
+		select * from annotation where annotation_id like '%${checktext}%' 
+		or annotationVisit_id like '%${checktext}%' 
+		or annotationUserPhone like '%${checktext}%' 
+		or annotationTime like '%${checktext}%' 
+		or annotationInfo like '%${checktext}%' 
+	    limit ${start},${limit}
+	</select>
+	<!-- #{} 预编译的形式解析 	${}文本插入 -->
+	<select id="saveVisit" parameterType="java.util.Map" resultType="com.st.bean.User">
+		select user_id from user_p where phoneNo=#{phoneNo}
+	</select>
+	
+	<select id="getCountCusT" parameterType="java.util.Map" resultType="int">
+	select count(*) from customer where customerName like '%${checktext}%' 
+		or contactName like '%${checktext}%' 
+		or customerTel like '%${checktext}%' 
+		or customerEmail like '%${checktext}%' 
+		or customerAddr like '%${checktext}%' 
+		or state like '%${checktext}%' 
+		or customerGrade like '%${checktext}%' 
+		or userPhone like '%${checktext}%'  
+	</select>
+	<select id="getCountCusP" parameterType="java.util.Map" resultType="int">
+	select count(*) from customer where customerPublic='public' and (customerName like '%${checktext}%' 
+		or contactName like '%${checktext}%' 
+		or customerTel like '%${checktext}%' 
+		or customerEmail like '%${checktext}%' 
+		or customerAddr like '%${checktext}%' 
+		or state like '%${checktext}%' 
+		or customerGrade like '%${checktext}%' 
+		or userPhone like '%${checktext}%')
+	</select>
+	
+	<select id="getCountCusPri" parameterType="java.util.Map" resultType="int">
+	select count(*) from customer where customerPublic='private' and (customerName like '%${checktext}%' 
+		or contactName like '%${checktext}%' 
+		or customerTel like '%${checktext}%' 
+		or customerEmail like '%${checktext}%' 
+		or customerAddr like '%${checktext}%' 
+		or state like '%${checktext}%' 
+		or customerGrade like '%${checktext}%' 
+		or userPhone like '%${checktext}%')
+	</select>
+	
+	<select id="returnReC" parameterType="java.util.Map" resultType="int">
+	select count(*) from visit where visitUserPhone like '%${checktext}%' 
+		or visitTime like '%${checktext}%' 
+		or visitInfo like '%${checktext}%' 
+		or visitPattern like '%${checktext}%' 
+		or visitPay like '%${checktext}%' 
+		or visitMoney like '%${checktext}%' 
+	</select>
+	<select id="returnReCP" parameterType="java.util.Map" resultType="int">
+	select count(*) from visit where visitUserPhone=#{visitUserPhone} and (visitUserPhone like '%${checktext}%' 
+		or visitTime like '%${checktext}%' 
+		or visitInfo like '%${checktext}%' 
+		or visitPattern like '%${checktext}%' 
+		or visitPay like '%${checktext}%' 
+		or visitMoney like '%${checktext}%')
+	</select>
+	<select id="returnAnno" parameterType="java.util.Map" resultType="int">
+	select count(*) from annotation where annotation_id like '%${checktext}%' 
+		or annotationVisit_id like '%${checktext}%' 
+		or annotationUserPhone like '%${checktext}%' 
+		or annotationTime like '%${checktext}%' 
+		or annotationInfo like '%${checktext}%'
+	</select>
+	
+	
+	<!-- <select id="getUser" resultType="Map"> select * from goodstype </select> -->
+
+	<!-- 定义每一行返回的封装 -->
+	<!-- <resultMap type="com.st.bean.User" id="user_map">
+		<result column="phoneNo" property="passWord" />
+	</resultMap>
+
+	<select id="getUser" resultMap="user_map">
+		select * from user_p
+	</select> -->
+
+	<resultMap type="com.st.bean.BuMen" id="bumen_map">
+		<result column="bmId" property="bmId" />
+		<result column="bmName" property="bmName" />
+		<collection property="userList" ofType="com.st.bean.UserBean">
+			<result column="user_id" property="user_id" />
+			<result column="userName" property="userName" />
+			<result column="passWord" property="passWord" />
+		</collection>
+	</resultMap>
+	
+	
+
+	<select id="getBuMen" resultMap="bumen_map">
+		select a.*,b.* from buMen as a left join user_p as b on a.bmId=b.phoneNo
+	</select>
+	
+	<resultMap type="com.st.bean.GoodsType" id="GT_map">
+		<result column="goodsType_id" property="goodsType_id" />
+		<result column="goodsTypeName" property="goodsTypeName" />
+		<collection property="goodsList" ofType="com.st.bean.Goods">
+			<result column="goods_id" property="goods_id" />
+			<result column="goodsName" property="goodsName" />
+			<result column="price" property="price" />
+		</collection>
+	</resultMap>
+	
+	<select id="getGT" resultMap="GT_map">
+		select a.*,b.* from goodstype as a left join goods as b on a.goodsTypeName=b.goodsTypeName
+	</select>
+
+	<!-- 将一部分sql语句单独定义,可以重复使用 -->
+	<sql id="s_user_where">
+		<where>
+			<if test="name!=null">
+				and userName=#{name}
+			</if>
+
+			<if test="sex!=null">
+				and sex=''
+			</if>
+		</where>
+	</sql>
+
+	
+
+	<select id="getBuMen2" resultMap="bumen_map" parameterType="map">
+		select a.*,b.* from buMen as a left join (select * from user_p
+		<include refid="s_user_where"></include>
+		) as b on a.bmId=b.phoneNo
+
+	</select>
+
+
+</mapper>

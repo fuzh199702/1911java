@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+#mi{
+	height: 50px;
+	width: 150px;
+	/* background-color: aqua; */
+	margin-left: 550px;
+	padding-left: 100px;
+}
+#mao{
+	height: 50px;
+	width: 150px;
+	/* background-color: aqua; */
+	margin-left: 480px;
+	padding-left: 100px;
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+#zhucezhanghao{
+	height: 50px;
+	width: 300px;
+	/* background-color: orange; */
+	margin-top: 80px;
+	margin-left: 580px;
+}
+#zhucezhanghao span{
+	font-size: 30px;
+	margin-left: 10px;
+}
+#jbzl{
+	height: 50px;
+	width: 300px;
+	/* background-color: orange; */
+	margin-top: 80px;
+	margin-left: 580px;
+}
+
+#jbzl span{
+	font-size: 20px;
+}
+
+/* +++++++++++++++++++++++++++ */
+#guojia{
+	width: 800px;
+	height: 100px;
+	/* background-color: #00FFFF; */
+	margin-left: 500px;
+}
+#country{
+	width: 400px;
+	height: 50px;
+}
+#guojia>div{
+	margin-bottom: 10px;
+	color: gray;
+	
+}
+
+#chenggong{
+	height: 20px;
+	width: 400px;
+	/* background-color: orangered; */
+	margin-left: 500px;
+	margin-top: -10px;
+	color: gray;
+}
+#shoujihao{
+	margin-top: 15px;
+	margin-left: 500px;
+	color: gray;
+}
+#zonghaoma{
+	width: 700px;
+	height: 60px;
+	/* background-color: #FF4500; */
+}
+#fname{
+	width: 300px;
+	height: 40px;
+	margin-bottom: 15px;
+}
+#haoma{
+	width: 100px;
+	height: 45px;
+}
+#qingshuru{
+	margin-left: 500px;
+	color: gray;
+}
+#tijiao{
+	margin-top: 10px;
+	margin-left:500px;
+	height: 50px;
+	width: 405px;
+	background-color: red;
+	font-size: 15px;
+	color: #fff;
+	border: 1px solid rgba(186,186,186,0.3);
+	cursor:pointer;
+	margin-top: 10px;
+}
+#lijizhuce:hover{
+	color: red;
+	cursor: pointer;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++协议++++++++++++++++++++++++++++++++++++++ */
+#xieyi{
+	margin-top: 80px;
+	margin-left: 550px;
+	font-size: 15px;
+}
+#xieyi span{
+	color: gray;
+}
+#jianti{
+	margin-top: 60px;
+	margin-left: 580px;
+	font-size: 15px;
+	color: grey;
+}
+#jinggongwang{
+	color: gray;
+	font-size: 13px;
+	margin-top: 15px;
+	margin-left: 425px;
+	margin-bottom: 40px;
+}
+
+#password{
+	display: inline-block;
+	width: 405px;
+	height: 43px;
+	margin-left: 500px;
+}
+#confirmpassword{
+	display: inline-block;
+	width: 405px;
+	height: 43px;
+	margin-top: 20px;
+	margin-left: 500px;
+}
+.sex{
+	margin-top: 30px;
+	margin-left: 435px;
+}
+.tj{
+	margin-left: 390px;
+	margin-bottom: 150px;
+	margin-top: 40px;
+	
+}
+.tj_btn{
+	width: 305px;
+	height: 43px;
+	background-color: red;
+}
+
+

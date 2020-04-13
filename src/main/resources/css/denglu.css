@@ -1,0 +1,212 @@
+@charset "UTF-8";
+html,
+body {
+	width: 100%;
+	/* height: 100%; */
+	padding: 0px;
+	margin: 0px;
+}
+
+/* ++++++++++++++++++++++小米商城+++++++++++++++++++++++++++++++ */
+.logo_mi {
+	width: 400px;
+	height: 70px;
+	/* background-color: aqua; */
+	margin-left: 20px;
+	padding-top:25px;
+	padding-left:65px;
+}
+
+.logo_mi img {
+	width: 55%;
+	height: 45%;
+}
+
+/* +++++++++++++++++++++++++++全球热爱+++++++++++++++++++++++++++++++++++++ */
+
+.red {
+	width: 100%;
+	height: 700px;
+	background-image: url(bck.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	overflow: auto;
+}
+
+.red a {
+	display: block;
+	width: 100%;
+	height: 700px;
+}
+
+/* ++++++++++++++++++++++++++++输入框++++++++++++++++++++++++++ */
+.div_s {
+	height: 550px;
+	width: 400px;
+	background-color: #fff;
+	float: right;
+	margin-right: 100px;
+	padding-left: -10px;
+	position: absolute;
+	top: 0;
+	margin-left: 800px;
+	margin-top: 140px;
+}
+
+.div_s span {
+	display: block;
+	position: relative;
+	/* display: inline-block; */
+	float: left;
+	font-size: 20px;
+	text-align: center;
+	margin-left: 60px;
+	margin-top: 20px;
+	margin-right: -40px;
+	
+}
+.zhanghao{
+	padding-right: 30px;
+	margin-left: -50px;
+}
+.saoma{
+	padding-left: 30px;
+}
+
+.div_s a{
+	text-decoration: none;
+}
+.shuxian{
+	color: gray;
+}
+
+/* --------------------------------------表单-------------------------- */
+.col-75{
+	position: absolute;
+	top: 50px;
+	height: 50px;
+	width: 50px;
+	/* background-color: chartreuse; */
+	}
+#firstname{
+	height: 50px;
+	width: 360px;
+	margin-left: 15px;
+	margin-top: 30px;
+}
+#lname{
+	height: 50px;
+	width: 360px;
+	margin-left: 15px;
+	margin-top: 100px;
+}
+/* +++++++++++++++++登录++++++++++++++++++++++++++++++++++ */
+.denglu{
+	width: 365px;
+	height: 51px;
+	background-color: darkorange;
+	margin-left: 15px;
+	margin-top: 240px;
+}
+.denglu>span{
+	display: block;
+	margin-right: 20px;
+	/* float: left; */
+	position: absolute;
+	margin-left: 150px;
+	margin-top: 11px;
+	color: #FFFFFF;
+}
+
+#zuo{
+	position: absolute;
+	top: 0;
+	margin-left: 15px;
+	margin-top: 290px;
+	font-size: 15px;
+	display: block;
+	width: 100px;
+	height: 100px;
+	color: #808080;
+}
+#you{
+	position: absolute;
+	top: 0;
+	margin-left: 240px;
+	margin-top: 290px;
+	font-size: 15px;
+	color: #808080;
+}
+.dd:link{
+	/* display: block; */
+	width: 0px;
+	height: 0px;
+}
+
+/* +++++++++++++++++++++++其他方式登录++++++++++++++++++++++++++ */
+.oth_type_txt{
+	/* display: block; */
+	height: 50px;
+	width: 280px;
+	margin-top: 150px;
+	margin-left: 75px;
+	/* background-color: red; */
+}
+.oth_type_txt span{
+	margin-top: -270px;
+	margin-right: 100px;
+	display: block;
+	text-align: center;
+	font-size: 18px;
+	}
+
+
+#denglutubiao{
+	width:500px;
+	height: 50px;
+	/* background-color: #FF8C00; */
+	margin-left: -100px;
+}
+#denglutubiao img{
+	
+	position: absolute;
+	margin-left: -155px;
+	margin-top: 10px;
+	background-color: #808080;
+}
+/* ++++++++++++++++++++++++++底板++++++++++++++++++++++++++ */
+#diban span{
+	display: inline-block;
+	margin-right: 15px;
+	line-height: 50px;
+	font-size: 15px;
+	color: #808080;
+}
+#diban{
+	height: 50px;
+	width: 500px;
+	/* background-color: #FF8C00; */
+	margin-left: 400px;
+	padding-left: 100px;
+}
+#zuidiban span{
+	line-height: 50px;
+	color: #808080;
+}
+#zuidiban{
+	width: 650px;
+	height: 50px;
+	/* background-color: #FF8C00; */
+	margin-left: 380px;
+}
+#dl{
+	height: 50px;
+	width: 370px;
+	position: relative;
+	top: -500px;
+	left: 10px;
+	background-color: red;
+	cursor:pointer;
+}
+
+
