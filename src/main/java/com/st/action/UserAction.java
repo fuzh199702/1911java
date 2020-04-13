@@ -38,7 +38,7 @@ public class UserAction {
 	@Autowired
 	IUserService userS;
 	
-	
+//	添加成功
 	
 	@RequestMapping("/sendE")
 	@ResponseBody
